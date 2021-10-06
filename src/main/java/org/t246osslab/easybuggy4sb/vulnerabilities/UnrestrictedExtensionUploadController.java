@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 import org.t246osslab.easybuggy4sb.core.utils.MultiPartFileUtils;
 
@@ -24,7 +25,7 @@ public class UnrestrictedExtensionUploadController extends AbstractController {
     // Name of the directory where uploaded files is saved
     private static final String SAVE_DIR = "uploadFiles";
 
-    @RequestMapping(value = "/ureupload", method = RequestMethod.GET)
+    @RequestMapping(value = Config.APP_ROOT + "/ureupload", method = RequestMethod.GET)
     public ModelAndView doGet(ModelAndView mav, HttpServletRequest req, Locale locale) {
         setViewAndCommonObjects(mav, locale, "unrestrictedextupload");
         if (req.getAttribute("errorMessage") != null) {
@@ -33,7 +34,7 @@ public class UnrestrictedExtensionUploadController extends AbstractController {
         return mav;
     }
 
-    @RequestMapping(value = "/ureupload", headers=("content-type=multipart/*"), method = RequestMethod.POST)
+    @RequestMapping(value = Config.APP_ROOT + "/ureupload", headers=("content-type=multipart/*"), method = RequestMethod.POST)
     public ModelAndView doPost(@RequestParam("file") MultipartFile file, ModelAndView mav, HttpServletRequest req, Locale locale) throws IOException {
         
         if (req.getAttribute("errorMessage") != null) {

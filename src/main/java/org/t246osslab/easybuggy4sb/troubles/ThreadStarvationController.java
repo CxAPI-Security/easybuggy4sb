@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -28,7 +29,7 @@ public class ThreadStarvationController extends AbstractController {
 	private static final String HISTORY_CSV_FILE_NAME = "history.csv";
 	final Lock lock = new ReentrantLock();
 
-	@RequestMapping(value = "/threadstarvation")
+	@RequestMapping(value = Config.APP_ROOT + "/threadstarvation")
 	public ModelAndView process(HttpServletRequest req, ModelAndView mav, Locale locale) throws IOException {
 
 		setViewAndCommonObjects(mav, locale, "threadstarvation");

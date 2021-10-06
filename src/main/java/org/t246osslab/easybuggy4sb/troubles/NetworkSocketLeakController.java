@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class NetworkSocketLeakController extends AbstractController {
 
-    @RequestMapping(value = "/netsocketleak")
+    @RequestMapping(value = Config.APP_ROOT + "/netsocketleak")
     public ModelAndView process(ModelAndView mav, HttpServletRequest req, Locale locale) {
         setViewAndCommonObjects(mav, locale, "netsocketleak");
         HttpURLConnection connection;

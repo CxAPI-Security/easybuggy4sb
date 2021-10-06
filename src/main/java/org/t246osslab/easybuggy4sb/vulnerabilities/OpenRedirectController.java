@@ -11,13 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.DefaultLoginController;
 
 @Controller
 public class OpenRedirectController extends DefaultLoginController {
 
     @Override
-    @RequestMapping(value = "/openredirect/login", method = RequestMethod.GET)
+    @RequestMapping(value = Config.APP_ROOT + "/openredirect/login", method = RequestMethod.GET)
     public ModelAndView doGet(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale) {
         req.setAttribute("note", msg.getMessage("msg.note.open.redirect", null, locale));
         super.doGet(mav, req, res, locale);
@@ -25,7 +26,7 @@ public class OpenRedirectController extends DefaultLoginController {
     }
 
     @Override
-    @RequestMapping(value = "/openredirect/login", method = RequestMethod.POST)
+    @RequestMapping(value = Config.APP_ROOT + "/openredirect/login", method = RequestMethod.POST)
     public ModelAndView doPost(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale) throws IOException {
 
         String userid = req.getParameter("userid");
@@ -42,7 +43,7 @@ public class OpenRedirectController extends DefaultLoginController {
             /* account lock count +1 */
             incrementLoginFailedCount(userid);
             session.setAttribute("authNMsg", msg.getMessage("msg.authentication.fail", null, locale));
-            res.sendRedirect("/openredirect/login" + loginQueryString);
+            res.sendRedirect(Config.APP_ROOT + "/openredirect/login" + loginQueryString);
         } else if (authUser(userid, password)) {
             /* if authentication succeeded, then reset account lock */
             resetAccountLock(userid);
@@ -56,7 +57,7 @@ public class OpenRedirectController extends DefaultLoginController {
             } else {
                 String target = (String) session.getAttribute("target");
                 if (target == null) {
-                    res.sendRedirect("/admins/main");
+                    res.sendRedirect(Config.APP_ROOT + "/admins/main");
                 } else {
                     session.removeAttribute("target");
                     res.sendRedirect(target);
@@ -66,7 +67,7 @@ public class OpenRedirectController extends DefaultLoginController {
             /* account lock count +1 */
             incrementLoginFailedCount(userid);
             session.setAttribute("authNMsg", msg.getMessage("msg.authentication.fail", null, locale));
-            res.sendRedirect("/openredirect/login" + loginQueryString);
+            res.sendRedirect(Config.APP_ROOT + "/openredirect/login" + loginQueryString);
         }
         return null;
     }

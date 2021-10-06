@@ -6,11 +6,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.t246osslab.easybuggy4sb.Config;
 
 @Controller
 public class UnsupportedOperationExceptionController {
 
-    @RequestMapping(value = "/uoe")
+    @RequestMapping(value = Config.APP_ROOT + "/uoe")
     public void process() {
         List<String> alphabet = Arrays.asList("a", "b", "c");
         Iterator<String> i = alphabet.iterator();

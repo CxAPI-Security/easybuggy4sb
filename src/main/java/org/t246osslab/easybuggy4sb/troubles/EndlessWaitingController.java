@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -23,7 +24,7 @@ public class EndlessWaitingController extends AbstractController {
 
     private static final int MAX_COUNT = 100000;
 
-    @RequestMapping(value = "/endlesswaiting")
+    @RequestMapping(value = Config.APP_ROOT + "/endlesswaiting")
     public ModelAndView process(@RequestParam(value = "count", required = false) String strCount,
             HttpServletRequest req, ModelAndView mav, Locale locale) throws IOException {
         setViewAndCommonObjects(mav, locale, "endlesswaiting");

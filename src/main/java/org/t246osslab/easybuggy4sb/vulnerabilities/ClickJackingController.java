@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -27,25 +28,25 @@ public class ClickJackingController extends AbstractController {
 	@Autowired
 	private LdapTemplate ldapTemplate;
 	
-	@RequestMapping(value = "/admins/clickjacking", method = RequestMethod.GET)
+	@RequestMapping(value = Config.APP_ROOT + "/admins/clickjacking", method = RequestMethod.GET)
 	public ModelAndView doGet(ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "clickjacking");
 		return mav;
 	}
 
-	@RequestMapping(value = "/admins/clickjacking", method = RequestMethod.POST)
+	@RequestMapping(value = Config.APP_ROOT + "/admins/clickjacking", method = RequestMethod.POST)
 	protected ModelAndView doPost(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale)
 			throws IOException {
         setViewAndCommonObjects(mav, locale, "clickjacking");
         
 		HttpSession session = req.getSession();
 		if (session == null) {
-			res.sendRedirect("/");
+			res.sendRedirect(Config.APP_ROOT + "/");
 			return null;
 		}
 		String userid = (String) session.getAttribute("userid");
 		if (userid == null) {
-			res.sendRedirect("/");
+			res.sendRedirect(Config.APP_ROOT + "/");
 			return null;
 		}
 		String mail = StringUtils.trim(req.getParameter("mail"));

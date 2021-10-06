@@ -7,6 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.t246osslab.easybuggy4sb.errors.StackOverflowErrorController;
 
 @SpringBootApplication
 public class Easybuggy4sbApplication extends SpringBootServletInitializer {

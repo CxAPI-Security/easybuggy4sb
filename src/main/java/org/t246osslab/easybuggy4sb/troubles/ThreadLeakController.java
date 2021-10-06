@@ -9,12 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class ThreadLeakController extends AbstractController {
 
-    @RequestMapping(value = "/threadleak")
+    @RequestMapping(value = Config.APP_ROOT + "/threadleak")
     public ModelAndView process(ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "threadleak");
         ThreadCountLoggingThread sub = new ThreadCountLoggingThread();

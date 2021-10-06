@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
+import org.t246osslab.easybuggy4sb.Config;
 
 /**
  * Servlet Filter for authentication
@@ -56,11 +57,11 @@ public class AuthenticationFilter implements Filter {
                 session = request.getSession(true);
                 session.setAttribute("target", target);
                 if (loginType == null) {
-                    response.sendRedirect(response.encodeRedirectURL("/login" + queryString));
+                    response.sendRedirect(response.encodeRedirectURL(Config.APP_ROOT + "/login" + queryString));
                 } else if ("sessionfixation".equals(loginType)) {
-                    response.sendRedirect(response.encodeRedirectURL("/" + loginType + "/login" + queryString));
+                    response.sendRedirect(response.encodeRedirectURL(Config.APP_ROOT + "/" + loginType + "/login" + queryString));
                 } else {
-                    response.sendRedirect("/" + loginType + "/login" + queryString);
+                    response.sendRedirect(Config.APP_ROOT + "/" + loginType + "/login" + queryString);
                 }
                 return;
             }

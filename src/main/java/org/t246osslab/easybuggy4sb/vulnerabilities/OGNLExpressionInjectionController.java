@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 import ognl.Ognl;
@@ -17,7 +18,7 @@ import ognl.OgnlException;
 @Controller
 public class OGNLExpressionInjectionController extends AbstractController {
 
-    @RequestMapping(value = "/ognleijc")
+    @RequestMapping(value = Config.APP_ROOT + "/ognleijc")
     public ModelAndView process(@RequestParam(value = "expression", required = false) String expression,
             ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "commandinjection");

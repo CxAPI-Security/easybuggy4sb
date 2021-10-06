@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -19,7 +20,7 @@ public class DeadlockController extends AbstractController {
     private final Object lock2 = new Object();
     private boolean switchFlag = true;
 
-    @RequestMapping(value = "/deadlock")
+    @RequestMapping(value = Config.APP_ROOT + "/deadlock")
     public ModelAndView process(HttpSession ses, ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "deadlock");
         

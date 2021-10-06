@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -23,7 +24,7 @@ public class StringPlusOperationController extends AbstractController {
     private static final String[] ALL_SIGNS = { "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":",
             ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}" };
 
-    @RequestMapping(value = "/strplusopr")
+    @RequestMapping(value = Config.APP_ROOT + "/strplusopr")
     public ModelAndView process(@RequestParam(value = "length", required = false) String strLength,
             @RequestParam(value = "characters", required = false) String[] characters, ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "strplusopr");

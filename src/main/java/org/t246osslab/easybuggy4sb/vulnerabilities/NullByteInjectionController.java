@@ -15,12 +15,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class NullByteInjectionController extends AbstractController {
 
-	@RequestMapping(value = "/nullbyteijct")
+	@RequestMapping(value = Config.APP_ROOT + "/nullbyteijct")
     public ModelAndView process(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale) throws IOException {
         setViewAndCommonObjects(mav, locale, "nullbyteinjection");
 		String fileName = req.getParameter("fileName");

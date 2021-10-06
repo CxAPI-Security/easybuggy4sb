@@ -14,11 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.t246osslab.easybuggy4sb.Config;
 
 @Controller
 public class FileSystemAlreadyExistsExceptionController {
 
-	@RequestMapping(value = "/fsaee")
+	@RequestMapping(value = Config.APP_ROOT + "/fsaee")
 	public void process(HttpServletRequest req) {
 		
         String tmpDir = req.getServletContext().getAttribute("javax.servlet.context.tempdir").toString();

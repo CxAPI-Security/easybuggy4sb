@@ -11,6 +11,7 @@ import java.util.Locale;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -18,7 +19,7 @@ public class MemoryLeakController extends AbstractController {
 
     private HashMap<String, String> cache = new HashMap<>();
 
-	@RequestMapping(value = "/memoryleak")
+	@RequestMapping(value = Config.APP_ROOT + "/memoryleak")
 	public ModelAndView process(ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "memoryleak");
         toDoRemove();

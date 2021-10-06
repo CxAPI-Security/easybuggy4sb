@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -20,7 +21,7 @@ public class LivelockController extends AbstractController {
 	private static final Lock lock2 = new ReentrantLock(true);
 	private boolean switchFlag = true;
 
-	@RequestMapping(value = "/livelock")
+	@RequestMapping(value = Config.APP_ROOT + "/livelock")
 	public ModelAndView process(HttpSession ses, ModelAndView mav, Locale locale) {
 		setViewAndCommonObjects(mav, locale, "livelock");
 

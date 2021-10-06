@@ -11,12 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class CodeInjectionController extends AbstractController {
 
-	@RequestMapping(value = "/codeijc")
+	@RequestMapping(value = Config.APP_ROOT + "/codeijc")
 	public ModelAndView process(@RequestParam(value = "jsonString", required = false) String jsonString,
 			ModelAndView mav, Locale locale) {
 		setViewAndCommonObjects(mav, locale, "codeinjection");

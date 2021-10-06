@@ -12,13 +12,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.t246osslab.easybuggy4sb.Config;
 
 @Controller
 public class BufferOverflowExceptionController {
 
 	private static final Logger log = LoggerFactory.getLogger(BufferOverflowExceptionController.class);
 
-	@RequestMapping(value = "/boe")
+	@RequestMapping(value = Config.APP_ROOT + "/boe")
 	public void process() {
 		File f = new File("test.txt");
 		try (RandomAccessFile raf = new RandomAccessFile(f, "rw");) {

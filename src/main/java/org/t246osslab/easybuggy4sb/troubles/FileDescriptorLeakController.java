@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -22,7 +23,7 @@ public class FileDescriptorLeakController extends AbstractController {
     private static final int MAX_DISPLAY_COUNT = 15;
     private long count = 0;
 
-    @RequestMapping(value = "/filedescriptorleak")
+    @RequestMapping(value = Config.APP_ROOT + "/filedescriptorleak")
     public ModelAndView process(HttpServletRequest req, ModelAndView mav, Locale locale) {
 
         setViewAndCommonObjects(mav, locale, "filedescriptorleak");

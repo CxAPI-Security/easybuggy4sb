@@ -7,11 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 
 @Controller
 public class IndexController extends AbstractController {
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = Config.APP_ROOT + "/")
     public ModelAndView init(HttpSession ses, ModelAndView mav, Locale locale) {
         ses.removeAttribute("dlpinit");
         setViewAndCommonObjects(mav, locale, "index");

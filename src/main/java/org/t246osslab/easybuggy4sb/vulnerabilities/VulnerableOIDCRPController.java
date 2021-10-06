@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 import com.google.api.client.auth.oauth2.AuthorizationCodeRequestUrl;
@@ -97,7 +98,7 @@ public class VulnerableOIDCRPController extends AbstractController {
 		}
 	}
 
-	@RequestMapping(value = "/vulnerabileoidcrp")
+	@RequestMapping(value = Config.APP_ROOT + "/vulnerabileoidcrp")
 	public ModelAndView index(ModelAndView mav, HttpServletRequest req, HttpSession ses, Locale locale) {
 
 		setViewAndCommonObjects(mav, locale, "vulnerabileoidcrp");
@@ -124,7 +125,7 @@ public class VulnerableOIDCRPController extends AbstractController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/start")
+	@RequestMapping(value = Config.APP_ROOT + "/start")
 	public ModelAndView start(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, HttpSession ses,
 			Locale locale) {
 
@@ -160,7 +161,7 @@ public class VulnerableOIDCRPController extends AbstractController {
         return null;
 	}
 
-	@RequestMapping(value = "/callback")
+	@RequestMapping(value = Config.APP_ROOT + "/callback")
 	public ModelAndView callback(ModelAndView mav, HttpServletRequest req, HttpSession ses, Locale locale) {
 
 		setViewAndCommonObjects(mav, locale, "vulnerabileoidcrp");
@@ -248,7 +249,7 @@ public class VulnerableOIDCRPController extends AbstractController {
 		}
 	}
 
-	@RequestMapping(value = "/oidclogout")
+	@RequestMapping(value = Config.APP_ROOT + "/oidclogout")
 	public String logout(HttpSession ses) {
 		try {
 			HttpRequestFactory requestFactory = (new NetHttpTransport()).createRequestFactory();
@@ -268,7 +269,7 @@ public class VulnerableOIDCRPController extends AbstractController {
 			log.error("Logout request to OP failed.", e);
 		}
 		ses.invalidate();
-		return "redirect:/";
+		return "redirect:" + Config.APP_ROOT + "/";
 	}
 
 	private void changeNextPageToUserInfo(ModelAndView mav, Locale locale, Map<?, ?> userInfo) {

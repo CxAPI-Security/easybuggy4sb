@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 import org.t246osslab.easybuggy4sb.core.model.User;
 
@@ -25,7 +26,7 @@ public class SQLInjectionController extends AbstractController {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@RequestMapping(value = "/sqlijc")
+	@RequestMapping(value = Config.APP_ROOT + "/sqlijc")
     public ModelAndView process(@RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "password", required = false) String password, ModelAndView mav,
             HttpServletRequest req, Locale locale) {

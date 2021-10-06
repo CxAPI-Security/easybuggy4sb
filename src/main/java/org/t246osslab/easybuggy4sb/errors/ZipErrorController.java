@@ -10,12 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class ZipErrorController  extends AbstractController {
 
-	@RequestMapping(value = "/ze")
+	@RequestMapping(value = Config.APP_ROOT + "/ze")
 	public void process(HttpServletRequest req) {
 		try {
 			File file = new File(req.getServletContext().getAttribute("javax.servlet.context.tempdir").toString(),

@@ -20,6 +20,7 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 import org.t246osslab.easybuggy4sb.core.model.User;
 
@@ -32,7 +33,7 @@ public class DeadlockController2 extends AbstractController {
     @Autowired
     private PlatformTransactionManager txMgr;
 
-    @RequestMapping(value = "/deadlock2")
+    @RequestMapping(value = Config.APP_ROOT + "/deadlock2")
     public ModelAndView process(HttpServletRequest req, HttpSession ses, ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "deadlock2");
         // Overwrite title (because title is the same as xee page)

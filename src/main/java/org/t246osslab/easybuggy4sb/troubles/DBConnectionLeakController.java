@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 import org.t246osslab.easybuggy4sb.core.model.User;
 
@@ -27,7 +28,7 @@ public class DBConnectionLeakController extends AbstractController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     
-    @RequestMapping(value = "/dbconnectionleak")
+    @RequestMapping(value = Config.APP_ROOT + "/dbconnectionleak")
     public ModelAndView process(ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "dbconnectionleak");
         if (StringUtils.isBlank(datasourceUrl) || datasourceUrl.startsWith("jdbc:derby:memory:")) {

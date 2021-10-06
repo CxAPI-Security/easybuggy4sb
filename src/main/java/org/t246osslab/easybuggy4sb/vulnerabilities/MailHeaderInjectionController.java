@@ -24,6 +24,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 /**
@@ -41,13 +42,13 @@ public class MailHeaderInjectionController extends AbstractController {
 	@Autowired
 	private JavaMailSender javaMailSender;
 
-	@RequestMapping(value = "/mailheaderijct", method = RequestMethod.GET)
+	@RequestMapping(value = Config.APP_ROOT + "/mailheaderijct", method = RequestMethod.GET)
 	public ModelAndView doGet(ModelAndView mav, Locale locale) {
 	    setViewAndCommonObjects(mav, locale, "mailheaderinjection");
 		return mav;
 	}
 
-	@RequestMapping(value = "/mailheaderijct", method = RequestMethod.POST)
+	@RequestMapping(value = Config.APP_ROOT + "/mailheaderijct", method = RequestMethod.POST)
 	public ModelAndView doPost(ModelAndView mav, HttpServletRequest req, Locale locale)
 			throws IOException, ServletException {
         setViewAndCommonObjects(mav, locale, "mailheaderinjection");

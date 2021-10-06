@@ -10,6 +10,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.NoSuchMessageException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 
 @Controller
 public abstract class AbstractController {
@@ -21,7 +22,7 @@ public abstract class AbstractController {
 
     protected void setViewAndCommonObjects(ModelAndView mav, Locale locale, String viewName) {
         if (viewName != null) {
-            mav.setViewName(viewName);
+            mav.setViewName(Config.TEMPLATE_PREFIX + viewName);
             try {
                 mav.addObject("title", msg.getMessage("title." + viewName + ".page", null, locale));
             } catch (NoSuchMessageException e) {

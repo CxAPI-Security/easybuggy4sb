@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
@@ -19,7 +20,7 @@ public class ThreadUnsafeController extends AbstractController {
 		sdf.setLenient(false);
 	}
 
-    @RequestMapping(value = "/threadunsafe")
+    @RequestMapping(value = Config.APP_ROOT + "/threadunsafe")
     public ModelAndView process(@RequestParam(value = "year", required = false) String year, ModelAndView mav, Locale locale) {
 		setViewAndCommonObjects(mav, locale, "threadunsafe");
 		if (year != null) {

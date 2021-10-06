@@ -6,13 +6,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.t246osslab.easybuggy4sb.Config;
 
 @Controller
 public class ExceptionInInitializerErrorController {
 	
     private static final Logger log = LoggerFactory.getLogger(ExceptionInInitializerErrorController.class);
 
-	@RequestMapping(value = "/eie")
+	@RequestMapping(value = Config.APP_ROOT + "/eie")
 	public void process() {
         try {
             Class<?> cl = Class.forName("org.t246osslab.easybuggy4sb.errors.InitializerErrorThrower");

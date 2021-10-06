@@ -23,6 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.core.model.User;
 
 @Controller
@@ -40,7 +41,7 @@ public class DefaultLoginController extends AbstractController {
     /* User's login history using in-memory account locking */
     private static ConcurrentHashMap<String, User> userLoginHistory = new ConcurrentHashMap<>();
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = Config.APP_ROOT + "/login", method = RequestMethod.GET)
     public ModelAndView doGet(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale) {
         setViewAndCommonObjects(mav, locale, "login");
 
@@ -61,7 +62,7 @@ public class DefaultLoginController extends AbstractController {
         return mav;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = Config.APP_ROOT + "/login", method = RequestMethod.POST)
     public ModelAndView doPost(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale)
             throws IOException {
 
@@ -80,7 +81,7 @@ public class DefaultLoginController extends AbstractController {
 
             String target = (String) session.getAttribute("target");
             if (target == null) {
-                res.sendRedirect("/admins/main");
+                res.sendRedirect(Config.APP_ROOT + "/admins/main");
             } else {
                 session.removeAttribute("target");
                 res.sendRedirect(target);

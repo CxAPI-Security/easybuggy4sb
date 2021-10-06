@@ -16,12 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class WeakReferenceController extends AbstractController {
 	
-    @RequestMapping(value = "/weakreference", method = RequestMethod.GET)
+    @RequestMapping(value = Config.APP_ROOT + "/weakreference", method = RequestMethod.GET)
     public ModelAndView doGet(ModelAndView mav, @ModelAttribute("logLevel") String logLevel, Locale locale) {
 		
     	setViewAndCommonObjects(mav, locale, "weakreference");
@@ -38,7 +39,7 @@ public class WeakReferenceController extends AbstractController {
 		return mav;
     }
 
-    @RequestMapping(value = "/weakreference", method = RequestMethod.POST)
+    @RequestMapping(value = Config.APP_ROOT + "/weakreference", method = RequestMethod.POST)
 	public String process(@RequestParam(value = "logLevel", required = false) String logLevel,
 			RedirectAttributes redirectAttributes) throws IOException {
     	
@@ -49,6 +50,6 @@ public class WeakReferenceController extends AbstractController {
         Formatter formatter =  new SimpleFormatter();
         handler.setFormatter(formatter);
         redirectAttributes.addFlashAttribute("logLevel", logLevel);
-        return "redirect:/weakreference";
+        return "redirect:" + Config.APP_ROOT + "/weakreference";
     }
 }

@@ -10,6 +10,7 @@ import java.util.Locale;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 import javassist.CannotCompileException;
@@ -20,7 +21,7 @@ public class MemoryLeakController2 extends AbstractController {
 
 	private int i = 0;
 
-	@RequestMapping(value = "/memoryleak2")
+	@RequestMapping(value = Config.APP_ROOT + "/memoryleak2")
 	public ModelAndView process(ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "memoryleak");
         mav.addObject("title", msg.getMessage("title.memoryleak2.page", null, locale));

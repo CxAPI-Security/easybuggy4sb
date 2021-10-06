@@ -7,12 +7,13 @@ import java.util.HashMap;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
 @Controller
 public class FileSystemNotFoundExceptionController  extends AbstractController {
 
-	@RequestMapping(value = "/fsnfe")
+	@RequestMapping(value = Config.APP_ROOT + "/fsnfe")
 	public void process() {
 		URI uri = URI.create("jar:file:/not/exist.zip");
 		try {

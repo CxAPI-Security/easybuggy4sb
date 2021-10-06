@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.DefaultLoginController;
 import org.t246osslab.easybuggy4sb.core.model.User;
 
@@ -21,7 +22,7 @@ import org.t246osslab.easybuggy4sb.core.model.User;
 public class VerboseErrorMessageController extends DefaultLoginController {
 
 	@Override
-	@RequestMapping(value = "/verbosemsg/login", method = RequestMethod.GET)
+	@RequestMapping(value = Config.APP_ROOT + "/verbosemsg/login", method = RequestMethod.GET)
 	public ModelAndView doGet(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale) {
 		req.setAttribute("note", msg.getMessage("msg.note.verbose.errror.message", null, locale));
 		super.doGet(mav, req, res, locale);
@@ -29,7 +30,7 @@ public class VerboseErrorMessageController extends DefaultLoginController {
 	}
 
 	@Override
-	@RequestMapping(value = "/verbosemsg/login", method = RequestMethod.POST)
+	@RequestMapping(value = Config.APP_ROOT + "/verbosemsg/login", method = RequestMethod.POST)
 	public ModelAndView doPost(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, Locale locale)
 			throws IOException {
 
@@ -53,7 +54,7 @@ public class VerboseErrorMessageController extends DefaultLoginController {
 
 			String target = (String) session.getAttribute("target");
 			if (target == null) {
-				res.sendRedirect("/admins/main");
+				res.sendRedirect(Config.APP_ROOT + "/admins/main");
 			} else {
 				session.removeAttribute("target");
 				res.sendRedirect(target);
