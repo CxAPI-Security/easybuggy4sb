@@ -14,12 +14,16 @@ import static org.t246osslab.easybuggy4sb.Config.AUTH_USER;
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
+
+    static final String AUTH_PATH = "/v2/authed/**";
+    static final String AUTH_PATH_SWAGGER_REGEX = "\\/v2\\/authed\\/.*";
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/authed/**").authenticated()
+                .antMatchers(AUTH_PATH).authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .httpBasic();

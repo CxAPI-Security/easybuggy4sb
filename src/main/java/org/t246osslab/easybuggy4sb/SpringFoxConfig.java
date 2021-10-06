@@ -17,6 +17,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Arrays;
 
+import static org.t246osslab.easybuggy4sb.WebSecurity.AUTH_PATH_SWAGGER_REGEX;
+
 @Configuration
 @EnableSwagger2
 public class SpringFoxConfig {
@@ -52,7 +54,7 @@ public class SpringFoxConfig {
         return SecurityContext.builder()
                 .securityReferences(
                         Arrays.asList(new SecurityReference("basic_auth", scopes())))
-                .forPaths(PathSelectors.regex("\\/authed\\/.*"))
+                .forPaths(PathSelectors.regex(AUTH_PATH_SWAGGER_REGEX))
                 .build();
     }
 

@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 import org.t246osslab.easybuggy4sb.core.model.User;
 import org.t246osslab.easybuggy4sb.core.utils.MultiPartFileUtils;
@@ -41,7 +42,7 @@ public class XEEandXXEController extends AbstractController {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@RequestMapping(value = { "/xee", "/xxe" }, method = RequestMethod.GET)
+	@RequestMapping(value = { Config.APP_ROOT + "/xee", Config.APP_ROOT + "/xxe" }, method = RequestMethod.GET)
 	public ModelAndView doGet(ModelAndView mav, HttpServletRequest req, Locale locale) throws IOException {
 
 		Resource resource = new ClassPathResource("/xml/sample_users.xml");
@@ -63,7 +64,7 @@ public class XEEandXXEController extends AbstractController {
 		return mav;
 	}
 
-	@RequestMapping(value = { "/xee", "/xxe" }, headers=("content-type=multipart/*"), method = RequestMethod.POST)
+	@RequestMapping(value = { Config.APP_ROOT + "/xee", Config.APP_ROOT + "/xxe" }, headers=("content-type=multipart/*"), method = RequestMethod.POST)
     public ModelAndView doPost(@RequestParam("file") MultipartFile file, ModelAndView mav, HttpServletRequest req,
 			Locale locale) throws IOException {
 
