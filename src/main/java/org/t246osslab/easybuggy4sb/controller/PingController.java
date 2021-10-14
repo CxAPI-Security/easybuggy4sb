@@ -10,7 +10,7 @@ public class PingController {
 
 	@RequestMapping(value = Config.APP_ROOT + "/ping")
 	public ModelAndView hello(ModelAndView mav) {
-		mav.setViewName("ping");
+		mav.setViewName(Config.TEMPLATE_PREFIX + "ping");
 		return mav;
 	}
 }
