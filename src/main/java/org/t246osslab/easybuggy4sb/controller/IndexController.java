@@ -31,7 +31,7 @@ public class IndexController extends AbstractController {
         mav.addObject("memoryleak2desc", msg.getMessage("function.description.memory.leak2", new Object[] { lblPerm }, locale));
 
         String mode = System.getProperty("easybuggy.mode");
-        mav.addObject("isOnlyVulnerabilities", mode != null && mode.equalsIgnoreCase("only-vulnerabilities"));
+        mav.addObject("isOnlyVulnerabilities", true);
         return mav;
     }
 }

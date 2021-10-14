@@ -16,12 +16,12 @@ public class XSSController extends AbstractController {
     @RequestMapping(value = Config.APP_ROOT + "/xss")
     public ModelAndView process(@RequestParam(value = "string", required = false) String string, ModelAndView mav,
             Locale locale) {
-        mav.setViewName("xss");
+        mav.setViewName(Config.TEMPLATE_PREFIX + "xss");
         mav.addObject("title", msg.getMessage("title.xss.page", null, locale));
         if (!StringUtils.isBlank(string)) {
             // Reverse the given string
             String reversedName = StringUtils.reverse(string);
-            mav.addObject("msg", msg.getMessage("label.reversed.string", null, locale) + " : " + reversedName);
+            mav.addObject("msg", string + ":" + msg.getMessage("label.reversed.string", null, locale) + " : " + reversedName);
         } else {
             mav.addObject("msg", msg.getMessage("msg.enter.string", null, locale));
         }
