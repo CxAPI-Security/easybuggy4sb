@@ -1,3 +1,4 @@
+/*
 package org.t246osslab.easybuggy4sb.vulnerabilities;
 
 import java.io.File;
@@ -27,11 +28,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 
+*/
 /**
  * A servlet that takes message details from user and send it as a new mail
  * through an SMTP server. The mail may contain a attachment which is the file
  * uploaded from client.
- */
+ *//*
+
 @Controller
 public class MailHeaderInjectionController extends AbstractController {
 
@@ -92,10 +95,12 @@ public class MailHeaderInjectionController extends AbstractController {
 		javaMailSender.send(message);
 	}
 
-	/**
+	*/
+/**
 	 * Saves files uploaded from the client and return a list of these files
 	 * which will be attached to the mail message.
-	 */
+	 *//*
+
 	private List<File> saveUploadedFiles(HttpServletRequest request) throws IOException, ServletException {
 		List<File> listFiles = new ArrayList<>();
 		byte[] buffer = new byte[4096];
@@ -129,9 +134,11 @@ public class MailHeaderInjectionController extends AbstractController {
 		return listFiles;
 	}
 
-	/**
+	*/
+/**
 	 * Retrieves file name of a upload part from its HTTP header
-	 */
+	 *//*
+
 	private String extractFileName(Part part) {
 		String contentDisp = part.getHeader("content-disposition");
 		String[] items = contentDisp.split(";");
@@ -143,9 +150,11 @@ public class MailHeaderInjectionController extends AbstractController {
 		return null;
 	}
 
-	/**
+	*/
+/**
 	 * Deletes all uploaded files, should be called after the e-mail was sent.
-	 */
+	 *//*
+
 	private void deleteUploadFiles(List<File> listFiles) {
 		if (listFiles != null && !listFiles.isEmpty()) {
 			for (File aFile : listFiles) {
@@ -156,3 +165,4 @@ public class MailHeaderInjectionController extends AbstractController {
 		}
 	}
 }
+*/
