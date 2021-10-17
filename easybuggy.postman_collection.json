@@ -1,0 +1,624 @@
+{
+	"info": {
+		"_postman_id": "f74c7c3f-55a3-4186-bb40-11578255a723",
+		"name": "easybuggy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deadlock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/deadlock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"deadlock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "livelock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/livelock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"livelock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gsfe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/gsfe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"gsfe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/admins/main",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"admins",
+						"main"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "run command",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/legacy/runCommand/whoami",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legacy",
+						"runCommand",
+						"whoami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v2/authed/getTime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"authed",
+						"getTime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "internal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/legacy/internal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legacy",
+						"internal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "op1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/legacy/op1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legacy",
+						"op1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "serverinfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/uid/serverinfo.jsp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"uid",
+						"serverinfo.jsp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "pasworld",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "csrf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/admins/csrf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"admins",
+						"csrf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "csrf - change password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/admins/csrf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"admins",
+						"csrf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clickjacking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/admins/clickjacking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"admins",
+						"clickjacking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clickjacking - change mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "mail",
+							"value": "sample@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/admins/clickjacking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"admins",
+						"clickjacking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bruteforce",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/bruteforce/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"bruteforce",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bruteforce login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/bruteforce/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"bruteforce",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ldap injection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/ldapijc/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"ldapijc",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ldap injection login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "*)(|(objectClass=*",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aaaaaaa)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/ldapijc/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"ldapijc",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mail header injection",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/mailheaderijct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"mailheaderijct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mail header injection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "john.doe@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "Lorem",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Lorem Ipsum",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/eb/v1/mailheaderijct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"v1",
+						"mailheaderijct"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
