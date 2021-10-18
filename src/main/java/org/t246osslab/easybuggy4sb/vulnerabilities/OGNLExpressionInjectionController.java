@@ -1,7 +1,11 @@
 package org.t246osslab.easybuggy4sb.vulnerabilities;
 
+import java.lang.reflect.Member;
+import java.lang.reflect.Modifier;
 import java.util.Locale;
+import java.util.Map;
 
+import ognl.AbstractMemberAccess;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.stereotype.Controller;
@@ -24,7 +28,12 @@ public class OGNLExpressionInjectionController extends AbstractController {
         setViewAndCommonObjects(mav, locale, "commandinjection");
         Object value = null;
         String errMessage = "";
-        OgnlContext ctx = new OgnlContext();
+        OgnlContext ctx = new OgnlContext(null, null, (new AbstractMemberAccess() {
+            public boolean isAccessible(Map context, Object target, Member member, String propertyName) {
+                int modifiers = member.getModifiers();// 228
+                return Modifier.isPublic(modifiers);// 229
+            }
+        }));
         if (!StringUtils.isBlank(expression)) {
             try {
                 Object expr = Ognl.parseExpression(expression.replaceAll("Math\\.", "@Math@"));
