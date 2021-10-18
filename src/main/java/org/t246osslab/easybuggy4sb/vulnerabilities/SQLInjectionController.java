@@ -54,10 +54,6 @@ public class SQLInjectionController extends AbstractController {
 	}
 
 	private List<User> selectUsers(String name, String password) {
-
-/*		String sql = "SELECT name, secret FROM users WHERE ispublic = 'true' AND name='" + name
-				+ "' AND password='" + password + "'";*/
-
 		String sql = "SELECT  name, secret from USERS where name='"+ name + "' or password='"+ password + "'" ;
 		System.out.println("***************** " + sql);
 		return jdbcTemplate.query(sql, new RowMapper<User>() {
