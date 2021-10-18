@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.boot.web.filter.OrderedCharacterEncodingFilter;
+import org.springframework.boot.web.servlet.filter.OrderedCharacterEncodingFilter;
 import org.springframework.stereotype.Component;
 
 /**
