@@ -215,28 +215,6 @@
 			"response": []
 		},
 		{
-			"name": "serverinfo",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/eb/v1/uid/serverinfo.jsp",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"eb",
-						"v1",
-						"uid",
-						"serverinfo.jsp"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "login page",
 			"request": {
 				"method": "GET",
