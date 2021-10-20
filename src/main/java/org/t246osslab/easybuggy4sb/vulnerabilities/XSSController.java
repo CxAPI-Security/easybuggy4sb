@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
+import springfox.documentation.annotations.ApiIgnore;
 
 @Controller
 public class XSSController extends AbstractController {
 
+    @ApiIgnore
     @RequestMapping(value = Config.APP_ROOT + "/xss")
     public ModelAndView process(@RequestParam(value = "string", required = false) String string, ModelAndView mav,
             Locale locale) {
