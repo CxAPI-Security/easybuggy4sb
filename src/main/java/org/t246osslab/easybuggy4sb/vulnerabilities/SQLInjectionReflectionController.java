@@ -1,12 +1,5 @@
 package org.t246osslab.easybuggy4sb.vulnerabilities;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Locale;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -20,13 +13,22 @@ import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
 import org.t246osslab.easybuggy4sb.core.model.User;
 
+import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 @Controller
-public class SQLInjectionController extends AbstractController {
+public class SQLInjectionReflectionController extends AbstractController {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@RequestMapping(value = Config.APP_ROOT + "/sqlijc")
+	@RequestMapping(value = Config.APP_ROOT + "/sqlijc-reflection")
     public ModelAndView process(@RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "password", required = false) String password, ModelAndView mav,
             HttpServletRequest req, Locale locale) {
@@ -54,14 +56,26 @@ public class SQLInjectionController extends AbstractController {
 	}
 
 	private List<User> selectUsers(String name, String password) {
-		String sql = "SELECT  name, secret from USERS where name='"+ name + "' or password='"+ password + "'" ;
-		return jdbcTemplate.query(sql, new RowMapper<User>() {
-                    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        User user = new User();
-                        user.setName(rs.getString("name"));
-                        user.setSecret(rs.getString("secret"));
-                        return user;
-                    }
-				});
+
+		String sql = "SELECT name, secret FROM users WHERE ispublic = 'true' AND name='" + name
+				+ "' AND password='" + password + "'";
+
+		try {
+			Method queryMethod
+					= JdbcTemplate.class.getMethod("query", String.class, RowMapper.class);
+
+			return (List<User>) queryMethod.invoke(jdbcTemplate, sql, new RowMapper<User>() {
+				public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+					User user = new User();
+					user.setName(rs.getString("name"));
+					user.setSecret(rs.getString("secret"));
+					return user;
+				}
+			});
+
+		} catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
 	}
 }
