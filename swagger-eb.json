@@ -125,10 +125,6 @@
         {
             "name": "xe-eand-xxe-controller",
             "description": "XE Eand XXE Controller"
-        },
-        {
-            "name": "xss-controller",
-            "description": "XSS Controller"
         }
     ],
     "paths": {
@@ -6954,281 +6950,6 @@
                 }
             }
         },
-        "/eb/v1/xss": {
-            "get": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingGET_8",
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                }
-            },
-            "head": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingHEAD_8",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingPOST_8",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "201": {
-                        "description": "Created"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingPUT_8",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "201": {
-                        "description": "Created"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingDELETE_8",
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                }
-            },
-            "options": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingOPTIONS_8",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                }
-            },
-            "patch": {
-                "tags": [
-                    "xss-controller"
-                ],
-                "summary": "process",
-                "operationId": "processUsingPATCH_8",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "name": "string",
-                        "in": "query",
-                        "description": "string",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/WildcardType"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                }
-            }
-        },
         "/eb/v1/xxe": {
             "get": {
                 "tags": [
@@ -7308,19 +7029,16 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingGET",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingGET",
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "401": {
@@ -7338,22 +7056,19 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingHEAD",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingHEAD",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "204": {
@@ -7371,22 +7086,19 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingPOST",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingPOST",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "201": {
@@ -7407,22 +7119,19 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingPUT",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingPUT",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "201": {
@@ -7443,19 +7152,16 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingDELETE",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingDELETE",
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "204": {
@@ -7473,22 +7179,19 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingOPTIONS",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingOPTIONS",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "204": {
@@ -7506,22 +7209,19 @@
                 "tags": [
                     "basic-error-controller"
                 ],
-                "summary": "error",
-                "operationId": "errorUsingPATCH",
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingPATCH",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
-                    "*/*"
+                    "text/html"
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "object"
-                            }
+                            "$ref": "#/definitions/WildcardType"
                         }
                     },
                     "204": {
@@ -7536,7 +7236,7 @@
                 }
             }
         },
-        "/legacy/internal": {
+        "/internal": {
             "get": {
                 "tags": [
                     "cx-controller"
@@ -7565,7 +7265,7 @@
                 }
             }
         },
-        "/legacy/op1": {
+        "/internal/op1": {
             "get": {
                 "tags": [
                     "cx-controller"
@@ -7594,13 +7294,16 @@
                 }
             }
         },
-        "/legacy/op2": {
-            "get": {
+        "/internal/op2": {
+            "post": {
                 "tags": [
                     "cx-controller"
                 ],
                 "summary": "op2",
-                "operationId": "op2UsingGET",
+                "operationId": "op2UsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "*/*"
                 ],
@@ -7609,6 +7312,57 @@
                         "description": "OK",
                         "schema": {
                             "type": "string"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/legacy/add": {
+            "get": {
+                "tags": [
+                    "cx-controller"
+                ],
+                "summary": "add",
+                "operationId": "addUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "a",
+                        "in": "query",
+                        "description": "a",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "b",
+                        "in": "query",
+                        "description": "b",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
                         }
                     },
                     "401": {
@@ -7624,12 +7378,15 @@
             }
         },
         "/legacy/runCommand/{cmd}": {
-            "get": {
+            "post": {
                 "tags": [
                     "cx-controller"
                 ],
                 "summary": "runCommand",
-                "operationId": "runCommandUsingGET",
+                "operationId": "runCommandUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "*/*"
                 ],
@@ -7649,6 +7406,9 @@
                             "type": "string"
                         }
                     },
+                    "201": {
+                        "description": "Created"
+                    },
                     "401": {
                         "description": "Unauthorized"
                     },
@@ -7661,6 +7421,43 @@
                 }
             }
         },
+        "/v2/authed/getIP": {
+            "get": {
+                "tags": [
+                    "cx-controller"
+                ],
+                "summary": "getIP",
+                "operationId": "getIPUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "basic_auth": [
+                            "read",
+                            "write"
+                        ]
+                    }
+                ]
+            }
+        },
         "/v2/authed/getTime": {
             "get": {
                 "tags": [
@@ -7668,6 +7465,43 @@
                 ],
                 "summary": "getTime",
                 "operationId": "getTimeUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "basic_auth": [
+                            "read",
+                            "write"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/v2/authed/getUser": {
+            "get": {
+                "tags": [
+                    "cx-controller"
+                ],
+                "summary": "getUser",
+                "operationId": "getUserUsingGET",
                 "produces": [
                     "*/*"
                 ],
