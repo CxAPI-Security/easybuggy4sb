@@ -8,7 +8,7 @@
 				<td>
 					<img src="images/easybuggy.png"  class="bounceInRight animated" width="324px" height="116px" />
 				</td>
-				<td><span class="glyphicon glyphicon-warning-sign"></span> 
+				<td><span class="glyphicon glyphicon-warning-sign"></span>
                 <span th:text="#{description.all}"></span></td>
 			</tr>
 		</table>
@@ -16,7 +16,7 @@
 	<hr />
     <th:block th:unless="${isOnlyVulnerabilities}">
 	<h2>
-		<span class="glyphicon glyphicon-knight"></span> 
+		<span class="glyphicon glyphicon-knight"></span>
         <span th:text="#{section.troubles}"></span>
 	</h2>
 	<p th:text="#{description.troubles}"></p>
@@ -48,7 +48,7 @@
     </th:block>
 
 	<h2>
-		<span class="glyphicon glyphicon-knight"></span> 
+		<span class="glyphicon glyphicon-knight"></span>
         <span th:text="#{section.vulnerabilities}"></span>
 	</h2>
 	<p th:text="#{description.vulnerabilities}"></p>
@@ -81,7 +81,7 @@
 
     <th:block th:unless="${isOnlyVulnerabilities}">
 	<h2>
-		<span class="glyphicon glyphicon-knight"></span> 
+		<span class="glyphicon glyphicon-knight"></span>
         <span th:text="#{section.performance.issue}"></span>
 	</h2>
 	<p th:text="#{description.performance.issue}"></p>
@@ -92,7 +92,7 @@
 	</ul>
 
 	<h2>
-		<span class="glyphicon glyphicon-knight"></span> 
+		<span class="glyphicon glyphicon-knight"></span>
         <span th:text="#{section.errors}"></span>
 	</h2>
 	<p th:text="#{description.errors}"></p>
@@ -114,7 +114,7 @@
 	</ul>
 
 	<h2>
-		<span class="glyphicon glyphicon-knight"></span> 
+		<span class="glyphicon glyphicon-knight"></span>
         <span th:text="#{section.exceptions}"></span>
 	</h2>
 	<p th:text="#{description.section.exceptions}"></p>
@@ -150,6 +150,18 @@
 		<li><p><a href="uoe" target="_blank">UnsupportedOperationException </a>: <span th:text="#{function.description.throwable(${'UnsupportedOperationException'})}"></span></p></li>
 	</ul>
     </th:block>
+
+	<ul hidden="true">
+			<li><a href="../../v2/authed/getTime">getTime</a></li>
+			<li><a href="../../v2/authed/getUser">getUser</a></li>
+			<li><a href="../../v2/authed/getIP">getIP</a></li>
+			<li><a href="../../v2/authed/multiply?a=2&b=3">multiply</a></li>
+			<li><a href="../../legacy/runCommand/whoami">runCommand</a></li>
+			<li><a href="../../legacy/add">add</a></li>
+			<li><a href="../../internal">add</a></li>
+			<li><a href="../../internal/op1">op1</a></li>
+			<li><a href="../../internal/op2">op2</a></li>
+	</ul>
 
 	<hr />
 	<footer>
