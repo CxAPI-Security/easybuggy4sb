@@ -48,69 +48,6 @@
 			"response": []
 		},
 		{
-			"name": "deadlock",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/eb/v1/deadlock",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"eb",
-						"v1",
-						"deadlock"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "livelock",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/eb/v1/livelock",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"eb",
-						"v1",
-						"livelock"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "gsfe",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/eb/v1/gsfe",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"eb",
-						"v1",
-						"gsfe"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "admins",
 			"request": {
 				"method": "GET",
@@ -135,10 +72,10 @@
 		{
 			"name": "run command",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/legacy/runCommand/whoami",
+					"raw": "http://localhost:8080/legacy/runCommand/{{cmd}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -147,7 +84,7 @@
 					"path": [
 						"legacy",
 						"runCommand",
-						"whoami"
+						"{{cmd}}"
 					]
 				}
 			},
@@ -180,14 +117,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/legacy/internal",
+					"raw": "http://localhost:8080/internal",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"legacy",
 						"internal"
 					]
 				}
@@ -200,14 +136,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/legacy/op1",
+					"raw": "http://localhost:8080/internal/op1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"legacy",
+						"internal",
 						"op1"
 					]
 				}
@@ -525,19 +461,12 @@
 			"response": []
 		},
 		{
-			"name": "mail header injection",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "sql injection reflection",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
 				"url": {
-					"raw": "http://localhost:8080/eb/v1/mailheaderijct",
+					"raw": "http://localhost:8080/eb/v1/sqlijc-reflection",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -546,57 +475,17 @@
 					"path": [
 						"eb",
 						"v1",
-						"mailheaderijct"
+						"sqlijc-reflection"
 					]
 				}
 			},
 			"response": []
-		},
+		}
+	],
+	"variable": [
 		{
-			"name": "mail header injection",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "John",
-							"type": "text"
-						},
-						{
-							"key": "mail",
-							"value": "john.doe@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "subject",
-							"value": "Lorem",
-							"type": "text"
-						},
-						{
-							"key": "content",
-							"value": "Lorem Ipsum",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/eb/v1/mailheaderijct",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"eb",
-						"v1",
-						"mailheaderijct"
-					]
-				}
-			},
-			"response": []
+			"key": "cmd",
+			"value": "whoami"
 		}
 	]
 }
