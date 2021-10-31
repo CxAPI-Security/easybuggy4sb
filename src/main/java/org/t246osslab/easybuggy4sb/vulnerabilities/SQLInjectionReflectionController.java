@@ -32,7 +32,7 @@ public class SQLInjectionReflectionController extends AbstractController {
     public ModelAndView process(@RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "password", required = false) String password, ModelAndView mav,
             HttpServletRequest req, Locale locale) {
-	    setViewAndCommonObjects(mav, locale, "sqlijc");
+	    setViewAndCommonObjects(mav, locale, "sqlijc-reflection");
 		String trimedName = StringUtils.trim(name);
 		String trimedPassword = StringUtils.trim(password);
 		if (!StringUtils.isBlank(trimedName) && !StringUtils.isBlank(trimedPassword) && trimedPassword.length() >= 8) {
