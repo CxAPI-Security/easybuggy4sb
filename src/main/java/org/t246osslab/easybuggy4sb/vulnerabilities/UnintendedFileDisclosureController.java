@@ -17,7 +17,7 @@ public class UnintendedFileDisclosureController extends AbstractController {
         return mav;
     }
     
-    @RequestMapping(value = Config.APP_ROOT + "/serverinfo")
+    @RequestMapping(value = Config.APP_ROOT + "/serverinfoMe")
     public ModelAndView serverinfo(ModelAndView mav, Locale locale) {
         setViewAndCommonObjects(mav, locale, "serverinfo");
         mav.addObject("properties", System.getProperties());

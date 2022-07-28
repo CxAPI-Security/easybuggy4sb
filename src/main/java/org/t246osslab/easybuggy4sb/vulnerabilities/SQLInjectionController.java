@@ -27,12 +27,11 @@ public class SQLInjectionController extends AbstractController {
 	private JdbcTemplate jdbcTemplate;
 
 	@RequestMapping(value = Config.APP_ROOT + "/sqlijc")
-    public ModelAndView process(@RequestParam(value = "name", required = false) String name,
-            @RequestParam(value = "password", required = false) String password, ModelAndView mav,
+    public ModelAndView process(@RequestParam(value = "name", required = false) String name, ModelAndView mav,
             HttpServletRequest req, Locale locale) {
 	    setViewAndCommonObjects(mav, locale, "sqlijc");
 		String trimedName = StringUtils.trim(name);
-		String trimedPassword = StringUtils.trim(password);
+		String trimedPassword = StringUtils.trim("123456789");
 		if (!StringUtils.isBlank(trimedName) && !StringUtils.isBlank(trimedPassword) && trimedPassword.length() >= 8) {
 			try {
 				List<User> users = selectUsers(trimedName, trimedPassword);
@@ -63,5 +62,10 @@ public class SQLInjectionController extends AbstractController {
                         return user;
                     }
 				});
+	}
+
+	public void doPong(String pong) {
+		String sql = "UPDATE domains SET pong = " + pong;
+		jdbcTemplate.update(sql);
 	}
 }

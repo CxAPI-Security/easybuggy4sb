@@ -127,7 +127,7 @@ public class VulnerableOIDCRPController extends AbstractController {
 
 	@RequestMapping(value = Config.APP_ROOT + "/start")
 	public ModelAndView start(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, HttpSession ses,
-			Locale locale) {
+			Locale locale, String time) {
 
 		setViewAndCommonObjects(mav, locale, "vulnerabileoidcrp");
 

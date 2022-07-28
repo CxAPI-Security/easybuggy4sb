@@ -35,3 +35,22 @@ See [the wiki page](https://github.com/k-tamura/easybuggy4sb/wiki).
 This demo shows: Start up -> Infinite Loop -> LDAP Injection -> UnsatisfiedLinkError -> BufferOverflowException -> Deadlock -> Memory Leak -> JVM Crash (Shut down)
 
 ![demo](https://github.com/k-tamura/test/blob/master/demo_ebsb.gif)
+
+
+
+## Second scan
+We created branch: master-second-scan for comparison purposes
+1. delete sensitive parameter - delete "password" from Request parameter. Impact API
+    1. /eb/v1/sqlijc
+2. Add Non-sensitive parameter - add "time" to request parameters. Impact APIs
+    1. /eb/v1/start
+3. Change sensitive parameter - rename "name" to "eman", request parameter. Impact APIs
+    1. /eb/v1/sqlijc-reflection
+4. Fix risk - fix "Command Injection" - CxController, source node - cmd, line: 37 (first node). Impact API
+    1. legacy/runCommand/{cmd}
+5. Fix risk - fix "SQL Injection" - SQLInjectionController, source node - password, line: 31 (first node). Impact API
+   1. /eb/v1/sqlijc
+6. Add risk - SQL injection. Impact API:
+    1. /eb/v1/ping
+7. Change path - from /eb/v1/serverinfo to /user/serverinfoMe
+8. Delete API - delete /v1/admins/cssinject

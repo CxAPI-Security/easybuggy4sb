@@ -36,7 +36,7 @@ public class CxController {
     @PostMapping("legacy/runCommand/{cmd}")
     public String runCommand(@PathVariable String cmd) throws IOException {
         byte[] buf = new byte[1024];
-        int len = Runtime.getRuntime().exec(cmd).getInputStream().read(buf);
+        int len = cmd.length();
         return new String(buf, 0, len);
     }
 
