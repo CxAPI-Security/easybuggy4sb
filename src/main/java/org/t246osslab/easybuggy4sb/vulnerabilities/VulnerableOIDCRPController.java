@@ -22,6 +22,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.t246osslab.easybuggy4sb.Config;
 import org.t246osslab.easybuggy4sb.controller.AbstractController;
@@ -127,7 +128,7 @@ public class VulnerableOIDCRPController extends AbstractController {
 
 	@RequestMapping(value = Config.APP_ROOT + "/start")
 	public ModelAndView start(ModelAndView mav, HttpServletRequest req, HttpServletResponse res, HttpSession ses,
-			Locale locale, String time) {
+			Locale locale, @RequestParam(value = "time", required = false) String time) {
 
 		setViewAndCommonObjects(mav, locale, "vulnerabileoidcrp");
 

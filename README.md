@@ -48,9 +48,10 @@ We created branch: master-second-scan for comparison purposes
     1. /eb/v1/sqlijc-reflection
 4. Fix risk - fix "Command Injection" - CxController, source node - cmd, line: 37 (first node). Impact API
     1. legacy/runCommand/{cmd}
+    2. probably it will solve 2 risks: command Injection & Stored XSS
 5. Fix risk - fix "SQL Injection" - SQLInjectionController, source node - password, line: 31 (first node). Impact API
    1. /eb/v1/sqlijc
-6. Add risk - SQL injection. Impact API:
+6. Add risk - SQL injection. source file: PingController; line: 16; source node: pong. Impact API:
     1. /eb/v1/ping
 7. Change path - from /eb/v1/serverinfo to /user/serverinfoMe
 8. Delete API - delete /v1/admins/cssinject
