@@ -53,5 +53,5 @@ We created branch: master-second-scan for comparison purposes
    1. /eb/v1/sqlijc
 6. Add risk - SQL injection. source file: PingController; line: 16; source node: pong. Impact API:
     1. /eb/v1/ping
-7. Change path - from /eb/v1/serverinfo to /user/serverinfoMe
+7. Change path - from /eb/v1/serverinfo to /eb/v1/serverinfoMe
 8. Delete API - delete /v1/admins/cssinject
