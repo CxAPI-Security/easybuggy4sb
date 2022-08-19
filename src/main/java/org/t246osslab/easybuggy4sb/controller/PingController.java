@@ -13,8 +13,8 @@ public class PingController {
 	private SQLInjectionController sqlInjectionController;
 
 	@RequestMapping(value = Config.APP_ROOT + "/ping")
-	public ModelAndView hello(ModelAndView mav, String pong) {
-		mav.setViewName(Config.TEMPLATE_PREFIX + "ping");
+	public ModelAndView hello(ModelAndView mav,@RequestParam(value = "phone", required = false)  String phone) {
+		mav.setViewName(Config.TEMPLATE_PREFIX + "phone");
 		sqlInjectionController.doPong(pong);
 		return mav;
 	}
