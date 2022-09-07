@@ -27,10 +27,10 @@
 		<li><p><a href="threadunsafe" th:text="#{function.name.thread.unsafe}"></a>: <span th:text="#{function.description.thread.unsafe}"></span></p></li>
 		<li><p><a href="deadlock2" th:text="#{function.name.dead.lock2}"></a>: <span th:text="#{function.description.dead.lock2}"></span></p></li>
 		<li><p><a href="endlesswaiting" th:text="#{function.name.endless.waiting.process}"></a>: <span th:text="#{function.description.endless.waiting.process}"></span></p></li>
-		<li><p><a href="infiniteloop" target="_blank" th:text="#{function.name.infinite.loop}"></a>: <span th:text="#{function.description.infinite.loop}"></span></p></li>
-		<li><p><a href="redirectloop" target="_blank" th:text="#{function.name.redirect.loop}"></a>: <span th:text="#{function.description.redirect.loop}"></span></p></li>
-		<li><p><a href="forwardloop" target="_blank" th:text="#{function.name.forward.loop}"></a>: <span th:text="#{function.description.forward.loop}"></span></p></li>
-		<li><p><a href="jvmcrasheav" target="_blank" th:text="#{function.name.jvm.crash.eav}"></a>: <span th:text="#{function.description.jvm.crash.eav}"></span></p></li>
+		<li><p><a href="infiniteloop" target="_blank" rel="nofollow" th:text="#{function.name.infinite.loop}"></a>: <span th:text="#{function.description.infinite.loop}"></span></p></li>
+		<li><p><a href="redirectloop" target="_blank" rel="nofollow" th:text="#{function.name.redirect.loop}"></a>: <span th:text="#{function.description.redirect.loop}"></span></p></li>
+		<li><p><a href="forwardloop" target="_blank" rel="nofollow" th:text="#{function.name.forward.loop}"></a>: <span th:text="#{function.description.forward.loop}"></span></p></li>
+		<li><p><a href="jvmcrasheav" target="_blank" rel="nofollow" th:text="#{function.name.jvm.crash.eav}"></a>: <span th:text="#{function.description.jvm.crash.eav}"></span></p></li>
 		<li><p><a href="memoryleak" th:text="#{function.name.memory.leak}"></a>: <span th:text="#{function.description.memory.leak}"></span></p></li>
 		<li><p><a href="memoryleak2" th:text="${memoryleak2func}"></a>: <span th:text="${memoryleak2desc}"></span></p></li>
 		<li><p><a href="memoryleak3" th:text="#{function.name.memory.leak3}"></a>: <span th:text="#{function.description.memory.leak3}"></span></p></li>
@@ -97,20 +97,20 @@
 	</h2>
 	<p th:text="#{description.errors}"></p>
 	<ul>
-		<li><p><a href="asserr" target="_blank">AssertionError</a>: <span th:text="#{function.description.throwable(${'AssertionError'})}"></span></p></li>
-		<li><p><a href="eie" target="_blank">ExceptionInInitializerError / NoClassDefFoundError</a>: <span th:text="#{function.description.ei.error}"></span></p></li>
-		<li><p><a href="fce" target="_blank">FactoryConfigurationError</a>: <span th:text="#{function.description.throwable(${'FactoryConfigurationError'})}"></span></p></li>
-		<li><p><a href="gsfe" target="_blank">GenericSignatureFormatError</a>: <span th:text="#{function.description.throwable(${'GenericSignatureFormatError'})}"></span></p></li>
-		<li><p><a href="oome" target="_blank">OutOfMemoryError (Java heap space)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
-		<li><p><a href="oome2" target="_blank">OutOfMemoryError (Requested array size exceeds VM limit)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
-		<li><p><a href="oome3" target="_blank">OutOfMemoryError (unable to create new native thread)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
-		<li><p><a href="oome4" target="_blank">OutOfMemoryError (GC overhead limit exceeded)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
-		<li><p><a href="oome5" target="_blank">OutOfMemoryError (<span th:text="${permname}"></span>)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
-		<li><p><a href="oome6" target="_blank">OutOfMemoryError (Direct buffer memory)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
-		<li><p><a href="sofe" target="_blank">StackOverflowError</a>: <span th:text="#{function.description.throwable(${'StackOverflowError'})}"></span></p></li>
-		<li><p><a href="tfce" target="_blank">TransformerFactoryConfigurationError</a>: <span th:text="#{function.description.throwable(${'TransformerFactoryConfigurationError'})}"></span></p></li>
-		<li><p><a href="jnicall" target="_blank">UnsatisfiedLinkError</a>: <span th:text="#{function.description.throwable(${'UnsatisfiedLinkError'})}"></span></p></li>
-		<li><p><a href="ze" target="_blank">ZipError</a>: <span th:text="#{function.description.throwable(${'ZipError'})}"></span></p></li>
+		<li><p><a href="asserr" target="_blank" rel="nofollow">AssertionError</a>: <span th:text="#{function.description.throwable(${'AssertionError'})}"></span></p></li>
+		<li><p><a href="eie" target="_blank" rel="nofollow">ExceptionInInitializerError / NoClassDefFoundError</a>: <span th:text="#{function.description.ei.error}"></span></p></li>
+		<li><p><a href="fce" target="_blank" rel="nofollow">FactoryConfigurationError</a>: <span th:text="#{function.description.throwable(${'FactoryConfigurationError'})}"></span></p></li>
+		<li><p><a href="gsfe" target="_blank" rel="nofollow">GenericSignatureFormatError</a>: <span th:text="#{function.description.throwable(${'GenericSignatureFormatError'})}"></span></p></li>
+		<li><p><a href="oome" target="_blank" rel="nofollow">OutOfMemoryError (Java heap space)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
+		<li><p><a href="oome2" target="_blank" rel="nofollow">OutOfMemoryError (Requested array size exceeds VM limit)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
+		<li><p><a href="oome3" target="_blank" rel="nofollow">OutOfMemoryError (unable to create new native thread)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
+		<li><p><a href="oome4" target="_blank" rel="nofollow">OutOfMemoryError (GC overhead limit exceeded)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
+		<li><p><a href="oome5" target="_blank" rel="nofollow">OutOfMemoryError (<span th:text="${permname}"></span>)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
+		<li><p><a href="oome6" target="_blank" rel="nofollow">OutOfMemoryError (Direct buffer memory)</a>: <span th:text="#{function.description.throwable(${'OutOfMemoryError'})}"></span></p></li>
+		<li><p><a href="sofe" target="_blank" rel="nofollow">StackOverflowError</a>: <span th:text="#{function.description.throwable(${'StackOverflowError'})}"></span></p></li>
+		<li><p><a href="tfce" target="_blank" rel="nofollow">TransformerFactoryConfigurationError</a>: <span th:text="#{function.description.throwable(${'TransformerFactoryConfigurationError'})}"></span></p></li>
+		<li><p><a href="jnicall" target="_blank" rel="nofollow">UnsatisfiedLinkError</a>: <span th:text="#{function.description.throwable(${'UnsatisfiedLinkError'})}"></span></p></li>
+		<li><p><a href="ze" target="_blank" rel="nofollow">ZipError</a>: <span th:text="#{function.description.throwable(${'ZipError'})}"></span></p></li>
 	</ul>
 
 	<h2>
@@ -119,35 +119,35 @@
 	</h2>
 	<p th:text="#{description.section.exceptions}"></p>
 	<ul>
-		<li><p><a href="ae" target="_blank">ArithmeticException </a>: <span th:text="#{function.description.throwable(${'ArithmeticException'})}"></span></p></li>
-		<li><p><a href="aioobe" target="_blank">ArrayIndexOutOfBoundsException </a>: <span th:text="#{function.description.throwable(${'ArrayIndexOutOfBoundsException'})}"></span></p></li>
-		<li><p><a href="ase" target="_blank">ArrayStoreException </a>: <span th:text="#{function.description.throwable(${'ArrayStoreException'})}"></span></p></li>
-		<li><p><a href="boe" target="_blank">BufferOverflowException </a>: <span th:text="#{function.description.throwable(${'BufferOverflowException'})}"></span></p></li>
-		<li><p><a href="bue" target="_blank">BufferUnderflowException </a>: <span th:text="#{function.description.throwable(${'BufferUnderflowException'})}"></span></p></li>
-		<li><p><a href="cre" target="_blank">CannotRedoException </a>: <span th:text="#{function.description.throwable(${'CannotRedoException'})}"></span></p></li>
-		<li><p><a href="cue" target="_blank">CannotUndoException </a>: <span th:text="#{function.description.throwable(${'CannotUndoException'})}"></span></p></li>
-		<li><p><a href="cce" target="_blank">ClassCastException </a>: <span th:text="#{function.description.throwable(${'ClassCastException'})}"></span></p></li>
-		<li><p><a href="cme" target="_blank">ConcurrentModificationException </a>: <span th:text="#{function.description.throwable(${'ConcurrentModificationException'})}"></span></p></li>
-		<li><p><a href="ese" target="_blank">EmptyStackException </a>: <span th:text="#{function.description.throwable(${'EmptyStackException'})}"></span></p></li>
-		<li><p><a href="fsaee" target="_blank">FileSystemAlreadyExistsException </a>: <span th:text="#{function.description.throwable(${'FileSystemAlreadyExistsException'})}"></span></p></li>
-		<li><p><a href="fsnfe" target="_blank">FileSystemNotFoundException </a>: <span th:text="#{function.description.throwable(${'FileSystemNotFoundException'})}"></span></p></li>
-		<li><p><a href="iae" target="_blank">IllegalArgumentException </a>: <span th:text="#{function.description.throwable(${'IllegalArgumentException'})}"></span></p></li>
-		<li><p><a href="imse" target="_blank">IllegalMonitorStateException </a>: <span th:text="#{function.description.throwable(${'IllegalMonitorStateException'})}"></span></p></li>
-		<li><p><a href="ipse" target="_blank">IllegalPathStateException </a>: <span th:text="#{function.description.throwable(${'IllegalPathStateException'})}"></span></p></li>
-		<li><p><a href="iase" target="_blank">IllegalStateException </a>: <span th:text="#{function.description.throwable(${'IllegalStateException'})}"></span></p></li>
-		<li><p><a href="itse" target="_blank">IllegalThreadStateException </a>: <span th:text="#{function.description.throwable(${'IllegalThreadStateException'})}"></span></p></li>
-		<li><p><a href="imoe" target="_blank">ImagingOpException </a>: <span th:text="#{function.description.throwable(${'ImagingOpException'})}"></span></p></li>
-		<li><p><a href="ioobe" target="_blank">IndexOutOfBoundsException </a>: <span th:text="#{function.description.throwable(${'IndexOutOfBoundsException'})}"></span></p></li>
-		<li><p><a href="ime" target="_blank">InputMismatchException </a>: <span th:text="#{function.description.throwable(${'InputMismatchException'})}"></span></p></li>
-		<li><p><a href="mpte" target="_blank">MalformedParameterizedTypeException </a>: <span th:text="#{function.description.throwable(${'MalformedParameterizedTypeException'})}"></span></p></li>
-		<li><p><a href="mre" target="_blank">MissingResourceException </a>: <span th:text="#{function.description.throwable(${'MissingResourceException'})}"></span></p></li>
-		<li><p><a href="nase" target="_blank">NegativeArraySizeException </a>: <span th:text="#{function.description.throwable(${'NegativeArraySizeException'})}"></span></p></li>
-		<li><p><a href="nsee" target="_blank">NoSuchElementException </a>: <span th:text="#{function.description.throwable(${'NoSuchElementException'})}"></span></p></li>
-		<li><p><a href="npe" target="_blank">NullPointerException </a>: <span th:text="#{function.description.throwable(${'NullPointerException'})}"></span></p></li>
-		<li><p><a href="nfe" target="_blank">NumberFormatException </a>: <span th:text="#{function.description.throwable(${'NumberFormatException'})}"></span></p></li>
-		<li><p><a href="se" target="_blank">SecurityException </a>: <span th:text="#{function.description.throwable(${'SecurityException'})}"></span></p></li>
-		<li><p><a href="uce" target="_blank">UnsupportedCharsetException </a>: <span th:text="#{function.description.throwable(${'UnsupportedCharsetException'})}"></span></p></li>
-		<li><p><a href="uoe" target="_blank">UnsupportedOperationException </a>: <span th:text="#{function.description.throwable(${'UnsupportedOperationException'})}"></span></p></li>
+		<li><p><a href="ae" target="_blank" rel="nofollow">ArithmeticException </a>: <span th:text="#{function.description.throwable(${'ArithmeticException'})}"></span></p></li>
+		<li><p><a href="aioobe" target="_blank" rel="nofollow">ArrayIndexOutOfBoundsException </a>: <span th:text="#{function.description.throwable(${'ArrayIndexOutOfBoundsException'})}"></span></p></li>
+		<li><p><a href="ase" target="_blank" rel="nofollow">ArrayStoreException </a>: <span th:text="#{function.description.throwable(${'ArrayStoreException'})}"></span></p></li>
+		<li><p><a href="boe" target="_blank" rel="nofollow">BufferOverflowException </a>: <span th:text="#{function.description.throwable(${'BufferOverflowException'})}"></span></p></li>
+		<li><p><a href="bue" target="_blank" rel="nofollow">BufferUnderflowException </a>: <span th:text="#{function.description.throwable(${'BufferUnderflowException'})}"></span></p></li>
+		<li><p><a href="cre" target="_blank" rel="nofollow">CannotRedoException </a>: <span th:text="#{function.description.throwable(${'CannotRedoException'})}"></span></p></li>
+		<li><p><a href="cue" target="_blank" rel="nofollow">CannotUndoException </a>: <span th:text="#{function.description.throwable(${'CannotUndoException'})}"></span></p></li>
+		<li><p><a href="cce" target="_blank" rel="nofollow">ClassCastException </a>: <span th:text="#{function.description.throwable(${'ClassCastException'})}"></span></p></li>
+		<li><p><a href="cme" target="_blank" rel="nofollow">ConcurrentModificationException </a>: <span th:text="#{function.description.throwable(${'ConcurrentModificationException'})}"></span></p></li>
+		<li><p><a href="ese" target="_blank" rel="nofollow">EmptyStackException </a>: <span th:text="#{function.description.throwable(${'EmptyStackException'})}"></span></p></li>
+		<li><p><a href="fsaee" target="_blank" rel="nofollow">FileSystemAlreadyExistsException </a>: <span th:text="#{function.description.throwable(${'FileSystemAlreadyExistsException'})}"></span></p></li>
+		<li><p><a href="fsnfe" target="_blank" rel="nofollow">FileSystemNotFoundException </a>: <span th:text="#{function.description.throwable(${'FileSystemNotFoundException'})}"></span></p></li>
+		<li><p><a href="iae" target="_blank" rel="nofollow">IllegalArgumentException </a>: <span th:text="#{function.description.throwable(${'IllegalArgumentException'})}"></span></p></li>
+		<li><p><a href="imse" target="_blank" rel="nofollow">IllegalMonitorStateException </a>: <span th:text="#{function.description.throwable(${'IllegalMonitorStateException'})}"></span></p></li>
+		<li><p><a href="ipse" target="_blank" rel="nofollow">IllegalPathStateException </a>: <span th:text="#{function.description.throwable(${'IllegalPathStateException'})}"></span></p></li>
+		<li><p><a href="iase" target="_blank" rel="nofollow">IllegalStateException </a>: <span th:text="#{function.description.throwable(${'IllegalStateException'})}"></span></p></li>
+		<li><p><a href="itse" target="_blank" rel="nofollow">IllegalThreadStateException </a>: <span th:text="#{function.description.throwable(${'IllegalThreadStateException'})}"></span></p></li>
+		<li><p><a href="imoe" target="_blank" rel="nofollow">ImagingOpException </a>: <span th:text="#{function.description.throwable(${'ImagingOpException'})}"></span></p></li>
+		<li><p><a href="ioobe" target="_blank" rel="nofollow">IndexOutOfBoundsException </a>: <span th:text="#{function.description.throwable(${'IndexOutOfBoundsException'})}"></span></p></li>
+		<li><p><a href="ime" target="_blank" rel="nofollow">InputMismatchException </a>: <span th:text="#{function.description.throwable(${'InputMismatchException'})}"></span></p></li>
+		<li><p><a href="mpte" target="_blank" rel="nofollow">MalformedParameterizedTypeException </a>: <span th:text="#{function.description.throwable(${'MalformedParameterizedTypeException'})}"></span></p></li>
+		<li><p><a href="mre" target="_blank" rel="nofollow">MissingResourceException </a>: <span th:text="#{function.description.throwable(${'MissingResourceException'})}"></span></p></li>
+		<li><p><a href="nase" target="_blank" rel="nofollow">NegativeArraySizeException </a>: <span th:text="#{function.description.throwable(${'NegativeArraySizeException'})}"></span></p></li>
+		<li><p><a href="nsee" target="_blank" rel="nofollow">NoSuchElementException </a>: <span th:text="#{function.description.throwable(${'NoSuchElementException'})}"></span></p></li>
+		<li><p><a href="npe" target="_blank" rel="nofollow">NullPointerException </a>: <span th:text="#{function.description.throwable(${'NullPointerException'})}"></span></p></li>
+		<li><p><a href="nfe" target="_blank" rel="nofollow">NumberFormatException </a>: <span th:text="#{function.description.throwable(${'NumberFormatException'})}"></span></p></li>
+		<li><p><a href="se" target="_blank" rel="nofollow">SecurityException </a>: <span th:text="#{function.description.throwable(${'SecurityException'})}"></span></p></li>
+		<li><p><a href="uce" target="_blank" rel="nofollow">UnsupportedCharsetException </a>: <span th:text="#{function.description.throwable(${'UnsupportedCharsetException'})}"></span></p></li>
+		<li><p><a href="uoe" target="_blank" rel="nofollow">UnsupportedOperationException </a>: <span th:text="#{function.description.throwable(${'UnsupportedOperationException'})}"></span></p></li>
 	</ul>
     </th:block>
 
