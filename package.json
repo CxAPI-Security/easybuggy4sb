@@ -1,24 +1,24 @@
 {
-    "name": "SupplyChainSecurity",
-    "private": false,
-    "version": "1.0.0",
-    "description": "SCS Examples to be cautious of... and protected by Checkmarx for...",
-    "main": "server.js",
-    "dependencies": {
-      "handlebars": "4.7.9",
-      "lodash": "4.17.11",
-      "node-ipc": "9.2.2",
-      "ua-parser-js": "0.7.29",
-      "event-pubsub": "5.0.3",
-      "momnet": "2.29.1",
-      "flow-dev-tools": "99.10.9",
-      "scs": "0.0.1"
-    },
-    "scripts": {},
-    "devDependencies": {
-      "async": "^2.0.0-rc.4",
-      "grunt": "^1.0.1",
-      "qs": "6.0.0",
-      "js-yaml": "3.6.1"
-    }
-  }
+  "dependencies": {
+    "event-pubsub": "5.0.3",
+    "flow-dev-tools": "99.10.9",
+    "handlebars": "4.7.9",
+    "lodash": "4.17.11",
+    "momnet": "2.29.1",
+    "node-ipc": "9.2.2",
+    "scs": "0.0.1",
+    "ua-parser-js": "0.7.30"
+  },
+  "description": "SCS Examples to be cautious of... and protected by Checkmarx for...",
+  "devDependencies": {
+    "async": "^2.0.0-rc.4",
+    "grunt": "^1.0.1",
+    "js-yaml": "3.6.1",
+    "qs": "6.0.0"
+  },
+  "main": "server.js",
+  "name": "SupplyChainSecurity",
+  "private": false,
+  "scripts": {},
+  "version": "1.0.0"
+}
