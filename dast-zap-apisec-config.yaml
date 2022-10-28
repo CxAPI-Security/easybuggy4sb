@@ -1,0 +1,54 @@
+---
+env:
+  contexts:
+  - name: "Default Context"
+    urls:
+    - "http://host.docker.internal:8080"
+    includePaths:
+    - "http://host.docker.internal:8080.*"
+    excludePaths: []
+    authentication:
+      parameters: {}
+      verification:
+        method: "response"
+        pollFrequency: 60
+        pollUnits: "requests"
+    sessionManagement:
+      method: "cookie"
+      parameters: {}
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: true
+  vars: {}
+jobs:
+- parameters:
+    maxAlertsPerRule: 0
+    scanOnlyInScope: true
+    maxBodySizeInBytesToScan: 0
+    enableTags: false
+  rules: []
+  name: "passiveScan-config"
+  type: "passiveScan-config"
+- parameters:
+    apiFile: ""
+    apiUrl: ""
+    targetUrl: "http://host.docker.internal:8080/eb/v1/*"
+    context: "Default Context"
+  name: "openapi"
+  type: "openapi"
+- parameters: {}
+  name: "passiveScan-wait"
+  type: "passiveScan-wait"
+- parameters: {}
+  policyDefinition:
+    rules: []
+  name: "activeScan"
+  type: "activeScan"
+- parameters:
+    template: "risk-confidence-html"
+    reportDir: ""
+    reportTitle: "ZAP Scanning Report"
+    reportDescription: ""
+  name: "report"
+  type: "report"

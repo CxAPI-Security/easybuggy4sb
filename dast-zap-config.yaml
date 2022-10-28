@@ -1,0 +1,63 @@
+env:
+    contexts:
+        - authentication:
+            parameters: {}
+            verification:
+                method: response
+                pollFrequency: 60
+                pollUnits: requests
+          excludePaths: []
+          includePaths: []
+          name: Default Context
+          sessionManagement:
+            method: cookie
+            parameters: {}
+          urls:
+            - http://host.docker.internal:8080
+    parameters:
+        failOnError: true
+        failOnWarning: false
+        progressToStdout: true
+    vars: {}
+jobs:
+    - name: passiveScan-config
+      parameters:
+        enableTags: false
+        scanOnlyInScope: true
+      rules: []
+      type: passiveScan-config
+    - name: spider
+      parameters: {}
+      tests:
+        - name: At least 1 URL found
+          onFail: INFO
+          operator: '>='
+          statistic: automation.spider.urls.added
+          type: stats
+          value: 1
+      type: spider
+    - name: spiderAjax
+      parameters: {}
+      tests:
+        - name: At least 1 URL found
+          onFail: INFO
+          operator: '>='
+          statistic: spiderAjax.urls.added
+          type: stats
+          value: 1
+      type: spiderAjax
+    - name: passiveScan-wait
+      parameters: {}
+      type: passiveScan-wait
+    - name: activeScan
+      parameters: {}
+      policyDefinition:
+        rules: []
+      type: activeScan
+    - name: report
+      parameters:
+        reportDescription: ""
+        reportDir: /path/output
+        reportFile: ZAP-Report
+        template: traditional-json
+      type: report
