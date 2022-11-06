@@ -17,7 +17,7 @@ This is a clone of EasyBuggy built on Spring Boot. [EasyBuggy](https://github.co
 
 Access to
 
-    http://localhost:8080
+    http://localhost:8080/eb/v1/
 
 #### To stop:
 
